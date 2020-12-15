@@ -14,6 +14,7 @@ public class cOrdenadores {
     
     public cOrdenadores() {
     }
+    Integer myInf= Integer.MAX_VALUE;
     /*Con Array */
     public void Insertion_sort(int [] arr){
         int key;
@@ -76,5 +77,43 @@ public class cOrdenadores {
             }
         }
         return n;
+    }
+    public void merge_sort(ArrayList<Integer> arr,int low,int mid, int high){
+        
+        int n1=mid-low+1;
+        int n2=high-mid;
+        
+        ArrayList<Integer> arrL=new ArrayList();//Left Izquierda
+        ArrayList<Integer> arrR=new ArrayList();//Derecha
+        
+        for(int i=0;i<n1;i++){
+            arrL.add(arr.get(low+i));
+        }
+        for(int j=0;j<n2;j++){
+            arrR.add(arr.get(mid+j+1));
+        }
+        arrL.add(myInf);
+        arrR.add(myInf);
+        
+        int lIndex=0;
+        int rIndex=0;
+        
+        for (int i = low; i < high + 1; i++) {
+            if(arrL.get(lIndex) <= arrR.get(rIndex)){
+                arr.set(i, arrL.get(lIndex));
+                lIndex++;
+            }else{
+                arr.set(i, arrR.get(rIndex));
+                rIndex++;
+            }
+        }
+    }
+    public void merge(ArrayList<Integer> arr,int low,int high){
+        if(low<high){
+            int mid=(low+high)/2;
+            merge(arr, low, mid);
+            merge(arr, mid+1, high);
+            merge_sort(arr, low, mid, high);
+        }
     }
 }

@@ -54,6 +54,7 @@ public class vGeneral extends javax.swing.JFrame {
         bInsertion_Sort = new javax.swing.JButton();
         bMostrarListaNueva = new javax.swing.JButton();
         lTiempoEje1 = new javax.swing.JLabel();
+        bMerge = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,6 +116,13 @@ public class vGeneral extends javax.swing.JFrame {
         lTiempoEje1.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
         lTiempoEje1.setText("Tiempo de Ejecucion");
 
+        bMerge.setText("Merge_Sort");
+        bMerge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bMergeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -134,13 +142,18 @@ public class vGeneral extends javax.swing.JFrame {
                             .addComponent(tfNvalores)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(bInsertion_Sort)
-                        .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lTiempoEje1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(bMostrarListaNueva))
-                            .addComponent(lTiempoEje))))
+                                .addGap(45, 45, 45)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lTiempoEje1)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(bMostrarListaNueva))
+                                    .addComponent(lTiempoEje)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(bMerge)))))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bAgregar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -165,7 +178,9 @@ public class vGeneral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bInsertion_Sort)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bInsertion_Sort)
+                    .addComponent(bMerge))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lTiempoEje1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -244,6 +259,23 @@ public class vGeneral extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, p);
     }//GEN-LAST:event_bMostrarListaNuevaActionPerformed
 
+    private void bMergeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMergeActionPerformed
+        try{
+            int high=this.aDesordenado.size()-1;
+            tiempoInicio = System.nanoTime();           
+            Oper.merge(this.aDesordenado,0,high);
+            tiempoFinal = System.nanoTime();
+            long nanoSeg=(tiempoFinal-tiempoInicio);
+            
+            double Seg= ((double)nanoSeg)/1000000000;
+            String l= Seg + " Segundos.";
+            lTiempoEje.setText(l);
+            JOptionPane.showMessageDialog(this, "Se Logro Ordenar la Lista por medio de Insertion_Sort");
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
+        }
+    }//GEN-LAST:event_bMergeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -284,6 +316,7 @@ public class vGeneral extends javax.swing.JFrame {
     private javax.swing.JButton bAgregar;
     private javax.swing.JButton bGenerar;
     private javax.swing.JButton bInsertion_Sort;
+    private javax.swing.JButton bMerge;
     private javax.swing.JButton bMostrarLista;
     private javax.swing.JButton bMostrarListaNueva;
     private javax.swing.JLabel jLabel1;
