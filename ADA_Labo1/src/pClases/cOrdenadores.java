@@ -116,7 +116,7 @@ public class cOrdenadores {
             merge_sort(arr, low, mid, high);
         }
     }
-    /**/
+    /*RadixSort*/
     public int getMax(ArrayList<Integer> arr){
         int max=arr.get(0);
         int n=arr.size();
@@ -154,5 +154,5 @@ public class cOrdenadores {
                 arr.set(i, result[i]);
         }
     }
-    /**/
+    /*RadixSort*/
 }
