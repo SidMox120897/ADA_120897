@@ -6,6 +6,8 @@
 package pClases;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Collections;
+
 /**
  *
  * @author sidmox
@@ -155,4 +157,194 @@ public class cOrdenadores {
         }
     }
     /*RadixSort*/
+    /*QuickSort*/
+    public void quick(ArrayList<Integer> arr){
+        quicksort(arr,0,arr.size()-1);
+    }
+    public void quicksort(ArrayList<Integer> arr, int low, int high){
+        if(low<high){
+            int partindex= partition(arr,low, high);
+            quicksort(arr,low,partindex-1);
+            quicksort(arr,partindex+1,high);
+        }
+    }
+    public int partition(ArrayList<Integer> arr, int low, int high){
+        int pivot=arr.get(high);
+        int i=low-1;
+        for(int j=low ; j<high-1 ; j++){
+            if (arr.get(j) <= pivot && i<j) {
+                i++;
+                int swapTemp = arr.get(i);
+                arr.set(i, arr.get(j));
+                arr.set(j, swapTemp);
+            }
+        }
+        int swapTemp = arr.get(i+1);
+        arr.set(i+1, arr.get(high));
+        arr.set(high, swapTemp);
+        return i+1;
+    }
+    /*QuickSort*/
+    /*HeapSort*/
+    public void heapsort(ArrayList<Integer> arr){
+        int n = arr.size();
+ 
+        for (int i = n/2-1; i >= 0; i--)
+            heapify(arr, i, n);
+ 
+        for (int i = n-1; i > 0; i--) {
+            int temp = arr.get(0);
+            arr.set(0, arr.get(i));
+            arr.set(i, temp);
+            heapify(arr, 0, i);
+        }
+    }
+    public void heapify(ArrayList<Integer> arr,int i, int n){
+        int largest = i;
+        int l = 2 * i + 1;
+        int r = 2 * i + 2;
+ 
+        if (l < n && arr.get(l) > arr.get(largest))
+            largest = l;
+ 
+        if (r < n && arr.get(r) > arr.get(largest))
+            largest = r;
+ 
+        if (largest != i) {
+            int swap = arr.get(i);
+            arr.set(i, arr.get(largest));
+            arr.set(largest, swap);
+
+            heapify(arr, largest, n);
+        }
+    }
+    /*HeapSort*/
+    /*BubbleSort*/
+    public void bubbleSort(ArrayList<Integer> arr) 
+    {
+        int n=arr.size();
+        int i, j, temp; 
+        boolean swapped; 
+        for (i = 0; i < n - 1; i++)  
+        { 
+            swapped = false; 
+            for (j = 0; j < n - i - 1; j++)  
+            { 
+                if (arr.get(j) > arr.get(j + 1))  
+                { 
+                    temp = arr.get(j); 
+                    arr.set(j, arr.get(j + 1)); 
+                    arr.set(j + 1, temp); 
+                    swapped = true; 
+                } 
+            } 
+            // IF no two elements were  
+            // swapped by inner loop, then break 
+            if (swapped == false) 
+                break; 
+        } 
+    }
+    /*BubbleSort*/
+    /*ShellSort*/
+    public void shellSort(ArrayList<Integer> arr) 
+    { 
+        int n = arr.size(); 
+
+        for (int gap = n/2; gap > 0; gap /= 2) 
+        { 
+            for (int i = gap; i < n; i += 1){ 
+                int temp = arr.get(i); 
+  
+                int j; 
+                for (j = i; j >= gap && arr.get(j - gap) > temp; j -= gap) 
+                    arr.set(j, arr.get(j - gap)); 
+  
+                arr.set(j, temp); 
+            }
+        }
+    } 
+    /*ShellSort*/
+    /*StoogeSort*/
+    public void stooge(ArrayList<Integer> arr){
+        int h=arr.size()-1;
+        stoogesort(arr, 0, h); 
+    }
+    public void stoogesort(ArrayList<Integer> arr, int l, int h) 
+    { 
+        if (l >= h) 
+           return;
+        if (arr.get(l) > arr.get(h)) 
+        { 
+            int t = arr.get(l); 
+            arr.set(l,arr.get(h)); 
+            arr.set(h, t); 
+        } 
+        if (h-l+1 > 2) 
+        { 
+            int t = (h-l+1) / 3; 
+            stoogesort(arr, l, h-t); 
+            stoogesort(arr, l+t, h); 
+            stoogesort(arr, l, h-t); 
+        } 
+    }
+    /*StoogeSort*/
+    
+    /*BinSort*/   
+    /*BinSort*/
+    /*BucketSort*/
+    public void bucketSort(ArrayList<Integer> arr) 
+    {
+        int max_value=getMax(arr);
+        int n=arr.size();
+        int[] bucket = new int[max_value + 1];
+        int[] sorted_arr = new int[n];
+ 
+        for (int i= 0; i <n; i++)
+            bucket[arr.get(i)]++;
+ 
+        int pos = 0;
+        for (int i = 0; i < bucket.length; i++)
+            for (int j = 0; j < bucket[i]; j++)
+                sorted_arr[pos++] = i;
+        
+        for(int i=0;i<sorted_arr.length;i++)
+            arr.set(i, sorted_arr[i]);
+    }
+ 
+    /*BucketSort*/
+    /*CountingSort*/
+    public void countSort(ArrayList<Integer> arr) {
+        int size=arr.size();
+        int[] output = new int[size + 1];
+
+        int max = arr.get(0);
+        for (int i = 1; i < size; i++) {
+          if (arr.get(i) > max)
+            max = arr.get(i);
+        }
+        int[] count = new int[max + 1];
+
+        for (int i = 0; i < max; ++i) {
+          count[i] = 0;
+        }
+
+        for (int i = 0; i < size; i++) {
+          count[arr.get(i)]++;
+        }
+
+        for (int i = 1; i <= max; i++) {
+          count[i] += count[i - 1];
+        }
+
+        for (int i = size - 1; i >= 0; i--) {
+          output[count[arr.get(i)] - 1] = arr.get(i);
+          count[arr.get(i)]--;
+        }
+
+        for (int i = 0; i < size; i++) {
+          arr.set(i,output[i]);
+        }
+    }
+    /*CountingSort*/
+    
 }

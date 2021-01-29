@@ -56,6 +56,13 @@ public class vGeneral extends javax.swing.JFrame {
         lTiempoEje1 = new javax.swing.JLabel();
         bMerge = new javax.swing.JButton();
         bRadix = new javax.swing.JButton();
+        bCountin = new javax.swing.JButton();
+        bHeap = new javax.swing.JButton();
+        bBubble = new javax.swing.JButton();
+        bQuick = new javax.swing.JButton();
+        bShell = new javax.swing.JButton();
+        bStooge = new javax.swing.JButton();
+        bBucket = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,18 +138,64 @@ public class vGeneral extends javax.swing.JFrame {
             }
         });
 
+        bCountin.setText("Countin_Sort");
+        bCountin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCountinActionPerformed(evt);
+            }
+        });
+
+        bHeap.setText("Heap_Sort");
+        bHeap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bHeapActionPerformed(evt);
+            }
+        });
+
+        bBubble.setText("Bubble_Sort");
+        bBubble.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBubbleActionPerformed(evt);
+            }
+        });
+
+        bQuick.setText("Quick_Sort");
+        bQuick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bQuickActionPerformed(evt);
+            }
+        });
+
+        bShell.setText("Shell_Sort");
+        bShell.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bShellActionPerformed(evt);
+            }
+        });
+
+        bStooge.setText("Stooge_Sort");
+        bStooge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bStoogeActionPerformed(evt);
+            }
+        });
+
+        bBucket.setText("Bucket_Sort");
+        bBucket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBucketActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lTiempoEje1)
-                        .addComponent(lTiempoEje))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel4)
+                .addGap(47, 47, 47)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel2)
@@ -150,24 +203,44 @@ public class vGeneral extends javax.swing.JFrame {
                                 .addComponent(bMostrarLista))
                             .addGap(39, 39, 39)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tfNumero, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                                .addComponent(tfNvalores)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bMostrarListaNueva)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(bInsertion_Sort)
-                                .addGap(119, 119, 119)
-                                .addComponent(bMerge)))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bAgregar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bGenerar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                        .addComponent(bRadix)))
-                .addContainerGap())
+                                .addComponent(tfNumero)
+                                .addComponent(tfNvalores, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(31, 31, 31)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(bAgregar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bGenerar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(bInsertion_Sort)
+                                        .addComponent(bCountin)
+                                        .addComponent(bStooge))
+                                    .addGap(47, 47, 47)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(bHeap)
+                                                .addComponent(bMerge))
+                                            .addGap(33, 33, 33)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(bRadix)
+                                                .addComponent(bBubble)))
+                                        .addComponent(bBucket)))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(220, 220, 220)
+                                    .addComponent(bMostrarListaNueva)))
+                            .addGap(28, 28, 28)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(bQuick)
+                                .addComponent(bShell)))))
+                .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lTiempoEje1)
+                    .addComponent(lTiempoEje))
+                .addGap(162, 162, 162))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,24 +260,39 @@ public class vGeneral extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bInsertion_Sort)
+                            .addComponent(bMerge)
+                            .addComponent(bRadix))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bCountin)
+                            .addComponent(bHeap)
+                            .addComponent(bBubble)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(bQuick)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bShell)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bInsertion_Sort)
-                    .addComponent(bMerge)
-                    .addComponent(bRadix))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                    .addComponent(bStooge)
+                    .addComponent(bBucket))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(lTiempoEje1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lTiempoEje)
-                .addGap(29, 29, 29)
+                .addGap(30, 30, 30)
                 .addComponent(bMostrarListaNueva)
-                .addGap(30, 30, 30))
+                .addGap(42, 42, 42))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,37 +302,44 @@ public class vGeneral extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarActionPerformed
-        // TODO add your handling code here:
+    private void bRadixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRadixActionPerformed
         try{
-            String f= tfNumero.getText();
-            int i=Integer.parseInt(f);
-            this.aDesordenado.add(i);
-            aImpri="Viejos"+Oper.TodosLosValores(this.aDesordenado);            
-        }catch(InputMismatchException ex){
-            JOptionPane.showMessageDialog(this, "No es un numero Entero");
-        }
-        tfNumero.setText("");
-    }//GEN-LAST:event_bAgregarActionPerformed
+            tiempoInicio = System.nanoTime();
+            Oper.radix(this.aDesordenado);
+            tiempoFinal = System.nanoTime();
+            long nanoSeg=(tiempoFinal-tiempoInicio);
 
-    private void bGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGenerarActionPerformed
-        // TODO add your handling code here:
+            double Seg= ((double)nanoSeg)/1000000000;
+            String l= Seg + " Segundos.";
+            lTiempoEje.setText(l);
+            JOptionPane.showMessageDialog(this, "Se Logro Ordenar la Lista por medio de Insertion_Sort");
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
+        }
+    }//GEN-LAST:event_bRadixActionPerformed
+
+    private void bMergeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMergeActionPerformed
         try{
-        String f=tfNvalores.getText();
-        int i=Integer.parseInt(f);
-        Oper.LlenarArreglo(this.aDesordenado, i);
-        aImpri="Viejos"+Oper.TodosLosValores(this.aDesordenado);
-        JOptionPane.showMessageDialog(this, "Se genero una Lista de "+i+"\n valores, aun puedes agregar valores a la lista,\n pero al generar una nueva se perdera la anterior.");
-        }catch(InputMismatchException ex){
-            JOptionPane.showMessageDialog(this, "No es un numero Entero");
-        }
-        tfNumero.setText("");
-    }//GEN-LAST:event_bGenerarActionPerformed
+            int high=this.aDesordenado.size()-1;
+            tiempoInicio = System.nanoTime();
+            Oper.merge(this.aDesordenado,0,high);
+            tiempoFinal = System.nanoTime();
+            long nanoSeg=(tiempoFinal-tiempoInicio);
 
-    private void bMostrarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarListaActionPerformed
+            double Seg= ((double)nanoSeg)/1000000000;
+            String l= Seg + " Segundos.";
+            lTiempoEje.setText(l);
+            JOptionPane.showMessageDialog(this, "Se Logro Ordenar la Lista por medio de Insertion_Sort");
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
+        }
+    }//GEN-LAST:event_bMergeActionPerformed
+
+    private void bMostrarListaNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarListaNuevaActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, aImpri);
-    }//GEN-LAST:event_bMostrarListaActionPerformed
+        String p=Oper.TodosLosValores(this.aDesordenado);
+        JOptionPane.showMessageDialog(this, p);
+    }//GEN-LAST:event_bMostrarListaNuevaActionPerformed
 
     private void bInsertion_SortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInsertion_SortActionPerformed
         try{
@@ -261,20 +356,45 @@ public class vGeneral extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bInsertion_SortActionPerformed
 
-    private void bMostrarListaNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarListaNuevaActionPerformed
+    private void bMostrarListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMostrarListaActionPerformed
         // TODO add your handling code here:
-        String p=Oper.TodosLosValores(this.aDesordenado);
-        JOptionPane.showMessageDialog(this, p);
-    }//GEN-LAST:event_bMostrarListaNuevaActionPerformed
+        JOptionPane.showMessageDialog(this, aImpri);
+    }//GEN-LAST:event_bMostrarListaActionPerformed
 
-    private void bMergeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMergeActionPerformed
+    private void bGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGenerarActionPerformed
+        // TODO add your handling code here:
         try{
-            int high=this.aDesordenado.size()-1;
-            tiempoInicio = System.nanoTime();           
-            Oper.merge(this.aDesordenado,0,high);
+            String f=tfNvalores.getText();
+            int i=Integer.parseInt(f);
+            Oper.LlenarArreglo(this.aDesordenado, i);
+            aImpri="Viejos"+Oper.TodosLosValores(this.aDesordenado);
+            JOptionPane.showMessageDialog(this, "Se genero una Lista de "+i+"\n valores, aun puedes agregar valores a la lista,\n pero al generar una nueva se perdera la anterior.");
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "No es un numero Entero");
+        }
+        tfNumero.setText("");
+    }//GEN-LAST:event_bGenerarActionPerformed
+
+    private void bAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarActionPerformed
+        // TODO add your handling code here:
+        try{
+            String f= tfNumero.getText();
+            int i=Integer.parseInt(f);
+            this.aDesordenado.add(i);
+            aImpri="Viejos"+Oper.TodosLosValores(this.aDesordenado);
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "No es un numero Entero");
+        }
+        tfNumero.setText("");
+    }//GEN-LAST:event_bAgregarActionPerformed
+
+    private void bQuickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bQuickActionPerformed
+        // TODO add your handling code here:
+        try{
+            tiempoInicio = System.nanoTime();
+            Oper.quick(this.aDesordenado);
             tiempoFinal = System.nanoTime();
             long nanoSeg=(tiempoFinal-tiempoInicio);
-            
             double Seg= ((double)nanoSeg)/1000000000;
             String l= Seg + " Segundos.";
             lTiempoEje.setText(l);
@@ -282,15 +402,15 @@ public class vGeneral extends javax.swing.JFrame {
         }catch(InputMismatchException ex){
             JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
         }
-    }//GEN-LAST:event_bMergeActionPerformed
+    }//GEN-LAST:event_bQuickActionPerformed
 
-    private void bRadixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRadixActionPerformed
+    private void bHeapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHeapActionPerformed
+        // TODO add your handling code here:
         try{
-            tiempoInicio = System.nanoTime();           
-            Oper.radix(this.aDesordenado);
+            tiempoInicio = System.nanoTime();
+            Oper.heapsort(this.aDesordenado);
             tiempoFinal = System.nanoTime();
             long nanoSeg=(tiempoFinal-tiempoInicio);
-            
             double Seg= ((double)nanoSeg)/1000000000;
             String l= Seg + " Segundos.";
             lTiempoEje.setText(l);
@@ -298,7 +418,87 @@ public class vGeneral extends javax.swing.JFrame {
         }catch(InputMismatchException ex){
             JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
         }
-    }//GEN-LAST:event_bRadixActionPerformed
+    }//GEN-LAST:event_bHeapActionPerformed
+
+    private void bBubbleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBubbleActionPerformed
+        // TODO add your handling code here:
+        try{
+            tiempoInicio = System.nanoTime();
+            Oper.bubbleSort(this.aDesordenado);
+            tiempoFinal = System.nanoTime();
+            long nanoSeg=(tiempoFinal-tiempoInicio);
+            double Seg= ((double)nanoSeg)/1000000000;
+            String l= Seg + " Segundos.";
+            lTiempoEje.setText(l);
+            JOptionPane.showMessageDialog(this, "Se Logro Ordenar la Lista por medio de Insertion_Sort");
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
+        }
+    }//GEN-LAST:event_bBubbleActionPerformed
+
+    private void bShellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShellActionPerformed
+        // TODO add your handling code here:
+        try{
+            tiempoInicio = System.nanoTime();
+            Oper.shellSort(this.aDesordenado);
+            tiempoFinal = System.nanoTime();
+            long nanoSeg=(tiempoFinal-tiempoInicio);
+            double Seg= ((double)nanoSeg)/1000000000;
+            String l= Seg + " Segundos.";
+            lTiempoEje.setText(l);
+            JOptionPane.showMessageDialog(this, "Se Logro Ordenar la Lista por medio de Insertion_Sort");
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
+        }
+    }//GEN-LAST:event_bShellActionPerformed
+
+    private void bStoogeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bStoogeActionPerformed
+        // TODO add your handling code here:
+        try{
+            tiempoInicio = System.nanoTime();
+            Oper.stooge(this.aDesordenado);
+            tiempoFinal = System.nanoTime();
+            long nanoSeg=(tiempoFinal-tiempoInicio);
+            double Seg= ((double)nanoSeg)/1000000000;
+            String l= Seg + " Segundos.";
+            lTiempoEje.setText(l);
+            JOptionPane.showMessageDialog(this, "Se Logro Ordenar la Lista por medio de Insertion_Sort");
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
+        }
+    }//GEN-LAST:event_bStoogeActionPerformed
+
+    private void bBucketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBucketActionPerformed
+        // TODO add your handling code here:
+        try{
+            tiempoInicio = System.nanoTime();
+            Oper.bucketSort(this.aDesordenado);
+            tiempoFinal = System.nanoTime();
+            long nanoSeg=(tiempoFinal-tiempoInicio);
+            double Seg= ((double)nanoSeg)/1000000000;
+            String l= Seg + " Segundos.";
+            lTiempoEje.setText(l);
+            JOptionPane.showMessageDialog(this, "Se Logro Ordenar la Lista por medio de Insertion_Sort");
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
+        }
+    }//GEN-LAST:event_bBucketActionPerformed
+
+    private void bCountinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCountinActionPerformed
+        // TODO add your handling code here:
+        try{
+            tiempoInicio = System.nanoTime();
+            Oper.countSort(this.aDesordenado);
+            tiempoFinal = System.nanoTime();
+            long nanoSeg=(tiempoFinal-tiempoInicio);
+            double Seg= ((double)nanoSeg)/1000000000;
+            String l= Seg + " Segundos.";
+            lTiempoEje.setText(l);
+            JOptionPane.showMessageDialog(this, "Se Logro Ordenar la Lista por medio de Insertion_Sort");
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
+        }
+    }//GEN-LAST:event_bCountinActionPerformed
 
     /**
      * @param args the command line arguments
@@ -338,12 +538,19 @@ public class vGeneral extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAgregar;
+    private javax.swing.JButton bBubble;
+    private javax.swing.JButton bBucket;
+    private javax.swing.JButton bCountin;
     private javax.swing.JButton bGenerar;
+    private javax.swing.JButton bHeap;
     private javax.swing.JButton bInsertion_Sort;
     private javax.swing.JButton bMerge;
     private javax.swing.JButton bMostrarLista;
     private javax.swing.JButton bMostrarListaNueva;
+    private javax.swing.JButton bQuick;
     private javax.swing.JButton bRadix;
+    private javax.swing.JButton bShell;
+    private javax.swing.JButton bStooge;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
