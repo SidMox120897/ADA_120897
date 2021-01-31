@@ -63,6 +63,7 @@ public class vGeneral extends javax.swing.JFrame {
         bShell = new javax.swing.JButton();
         bStooge = new javax.swing.JButton();
         bBucket = new javax.swing.JButton();
+        bBinSort = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -187,6 +188,13 @@ public class vGeneral extends javax.swing.JFrame {
             }
         });
 
+        bBinSort.setText("Bin_Sort");
+        bBinSort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBinSortActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -218,15 +226,14 @@ public class vGeneral extends javax.swing.JFrame {
                                         .addComponent(bStooge))
                                     .addGap(47, 47, 47)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(bHeap)
-                                                .addComponent(bMerge))
-                                            .addGap(33, 33, 33)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(bRadix)
-                                                .addComponent(bBubble)))
-                                        .addComponent(bBucket)))
+                                        .addComponent(bHeap)
+                                        .addComponent(bMerge)
+                                        .addComponent(bBucket))
+                                    .addGap(30, 30, 30)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(bBinSort)
+                                        .addComponent(bRadix)
+                                        .addComponent(bBubble)))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(220, 220, 220)
                                     .addComponent(bMostrarListaNueva)))
@@ -278,7 +285,8 @@ public class vGeneral extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bStooge)
-                    .addComponent(bBucket))
+                    .addComponent(bBucket)
+                    .addComponent(bBinSort))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(lTiempoEje1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -305,7 +313,7 @@ public class vGeneral extends javax.swing.JFrame {
     private void bRadixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRadixActionPerformed
         try{
             tiempoInicio = System.nanoTime();
-            Oper.radix(this.aDesordenado);
+            Oper.radixSort(this.aDesordenado);
             tiempoFinal = System.nanoTime();
             long nanoSeg=(tiempoFinal-tiempoInicio);
 
@@ -320,9 +328,8 @@ public class vGeneral extends javax.swing.JFrame {
 
     private void bMergeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMergeActionPerformed
         try{
-            int high=this.aDesordenado.size()-1;
             tiempoInicio = System.nanoTime();
-            Oper.merge(this.aDesordenado,0,high);
+            Oper.mergeSort(this.aDesordenado);
             tiempoFinal = System.nanoTime();
             long nanoSeg=(tiempoFinal-tiempoInicio);
 
@@ -344,7 +351,7 @@ public class vGeneral extends javax.swing.JFrame {
     private void bInsertion_SortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInsertion_SortActionPerformed
         try{
             tiempoInicio = System.nanoTime();
-            Oper.Insertion_sort(this.aDesordenado);
+            Oper.insertionSort(this.aDesordenado);
             tiempoFinal = System.nanoTime();
             long nanoSeg=(tiempoFinal-tiempoInicio);
             double Seg= ((double)nanoSeg)/1000000000;
@@ -392,7 +399,7 @@ public class vGeneral extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             tiempoInicio = System.nanoTime();
-            Oper.quick(this.aDesordenado);
+            Oper.quickSort(this.aDesordenado);
             tiempoFinal = System.nanoTime();
             long nanoSeg=(tiempoFinal-tiempoInicio);
             double Seg= ((double)nanoSeg)/1000000000;
@@ -456,7 +463,7 @@ public class vGeneral extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             tiempoInicio = System.nanoTime();
-            Oper.stooge(this.aDesordenado);
+            Oper.stoogeSort(this.aDesordenado);
             tiempoFinal = System.nanoTime();
             long nanoSeg=(tiempoFinal-tiempoInicio);
             double Seg= ((double)nanoSeg)/1000000000;
@@ -500,6 +507,22 @@ public class vGeneral extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bCountinActionPerformed
 
+    private void bBinSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBinSortActionPerformed
+        // TODO add your handling code here:
+        try{
+            tiempoInicio = System.nanoTime();
+            Oper.binSort(this.aDesordenado);
+            tiempoFinal = System.nanoTime();
+            long nanoSeg=(tiempoFinal-tiempoInicio);
+            double Seg= ((double)nanoSeg)/1000000000;
+            String l= Seg + " Segundos.";
+            lTiempoEje.setText(l);
+            JOptionPane.showMessageDialog(this, "Se Logro Ordenar la Lista por medio de Insertion_Sort");
+        }catch(InputMismatchException ex){
+            JOptionPane.showMessageDialog(this, "Upps!!! Hay Problemas: \n"+ex.toString());
+        }
+    }//GEN-LAST:event_bBinSortActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -538,6 +561,7 @@ public class vGeneral extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAgregar;
+    private javax.swing.JButton bBinSort;
     private javax.swing.JButton bBubble;
     private javax.swing.JButton bBucket;
     private javax.swing.JButton bCountin;
